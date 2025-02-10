@@ -1,0 +1,40 @@
+{
+    "name": "fair/queue",
+    "type": "library",
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Fair\\Queue\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fair\\Queue\\Test\\": "test/"
+        }
+    },
+    "authors": [
+        {
+            "name": "George",
+            "email": "20395372+just-george@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.1",
+        "ext-redis": "*"
+    },
+    "require-dev": {
+        "codeception/codeception": "^5.1",
+        "codeception/module-asserts": "^3.0",
+        "codeception/module-redis": "^3.2",
+        "fakerphp/faker": "^1.24",
+        "friendsofphp/php-cs-fixer": "^3.68",
+        "phpmd/phpmd": "^2.15",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/phpunit": "^10.5"
+    }
+}

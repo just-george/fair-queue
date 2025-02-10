@@ -1,0 +1,14 @@
+actor: IntegrationTester
+suite_namespace: Fair\Queue\Test\Integration
+modules:
+  enabled:
+    - Asserts
+    - \Fair\Queue\Test\Support\Helper\FakerProvider
+    - \Fair\Queue\Test\Support\Helper\RedisProvider:
+        host: '%REDIS_HOST%'
+        port: '%REDIS_PORT%'
+    - Redis:
+        host: '%REDIS_HOST%'
+        port: '%REDIS_PORT%'
+        database: 0
+        cleanupBefore: 'test'

@@ -1,0 +1,14 @@
+namespace: Fair\Queue\Test
+support_namespace: Support
+paths:
+  tests: test
+  output: test/_output
+  data: test/Support/Data
+  support: test/Support
+  envs: test/_envs
+actor_suffix: Tester
+params:
+  - env
+extensions:
+  enabled:
+    - Codeception\Extension\RunFailed

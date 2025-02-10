@@ -1,0 +1,35 @@
+name: fair-queue-testing
+services:
+  redis:
+    image: redis
+    expose:
+      - 6379
+    networks:
+      - redis
+  app:
+    build:
+      context: '.'
+      dockerfile: 'php.Dockerfile'
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    volumes:
+      - './../../src:/app/src'
+      - './../../test:/app/test'
+      - './../../composer.json:/app/composer.json'
+      - './../../codeception.yml:/app/codeception.yml'
+      - './../../Makefile:/app/Makefile'
+      - './../../.php-cs-fixer.dist.php:/app/.php-cs-fixer.dist.php'
+      - './../../phpmd.xml:/app/phpmd.xml'
+      - './../../phpstan-ignore.neon:/app/phpstan-ignore.neon'
+      - './../../phpstan.neon:/app/phpstan.neon'
+      - './../../phpunit.xml:/app/phpunit.xml'
+    command:
+      - make
+    depends_on:
+      - redis
+    networks:
+      - redis
+networks:
+  redis:
+    driver: 'bridge'

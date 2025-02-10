@@ -1,0 +1,11 @@
+parameters:
+  level: 8
+  paths:
+    - src
+    - test
+  excludePaths:
+    - test/Support/_generated/* (?)
+  reportMaybesInPropertyPhpDocTypes: false
+includes:
+  - phpstan-ignore.neon
+  - vendor/phpstan/phpstan-strict-rules/rules.neon

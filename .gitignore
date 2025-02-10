@@ -1,0 +1,4 @@
+/.phpunit.cache/
+/test/Support/_generated/
+/test/_output/
+/vendor/

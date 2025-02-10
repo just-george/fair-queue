@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot call method getFairTag\(\) on Fair\\Queue\\Message\\MessageInterface\|null\.$#'
+			identifier: method.nonObject
+			count: 7
+			path: test/Integration/RedisStorageBrokerTestCest.php
